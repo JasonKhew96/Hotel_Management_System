@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1504028993 source:c:\users\user\desktop\mmu\semester_3\tcp1121(assignment)\cp\hotel-management-system\cbp\hotel_management_system\main.cpp
+	<iostream>
+	<fstream>
+	<iomanip>
+	<windows.h>
+	<string>
+	<algorithm>
+	<iomanip>
+
