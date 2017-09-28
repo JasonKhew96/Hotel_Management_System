@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Customer.cpp" />
+		<Unit filename="Customer.h" />
+		<Unit filename="hotelBooking.cpp" />
+		<Unit filename="hotelBooking.h" />
+		<Unit filename="hotelRoom.cpp" />
+		<Unit filename="hotelRoom.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
