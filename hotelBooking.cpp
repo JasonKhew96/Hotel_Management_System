@@ -78,6 +78,7 @@ void hotelBooking::modifyBooking() {
     char inputstr[21];
     cout << "Room number (" << roomNumber << "): ";
     cin >> roomNumber;
+    cin.ignore();
     cout << "Customer Arrival (" << customerArrival << "): ";
     cin.getline(inputstr, sizeof(inputstr));
     set_customerArrival(inputstr);

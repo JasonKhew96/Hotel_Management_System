@@ -274,14 +274,14 @@ void hotel_modifyBooking() {
     }
     while (!File.eof() && found == false) {
         File.read(reinterpret_cast<char *> (&hb), sizeof(hotelBooking));
-        if (hb.get_RoomNumber() == n) {
+        if (hb.get_bookingID() == n) {
             hb.showBooking();
             cout << "\n\nEnter new details.\n";
             hb.modifyBooking();
             int pos = (-1)*static_cast<int>(sizeof(hotelBooking));
             File.seekg(pos, ios::cur);
             File.write(reinterpret_cast<char *> (&hb), sizeof(hotelBooking));
-            cout << "\n\n\tRecord Updated!";
+            cout << "\n\n\tRecord Updated!\n";
             found = true;
         }
     }
@@ -307,7 +307,7 @@ void hotel_deleteBooking() {
     outFile.open("temp.dat",ios::binary);
     inFile.seekg(0,ios::beg);
     while(inFile.read(reinterpret_cast<char *> (&hb), sizeof(hotelBooking))) {
-        if(hb.get_RoomNumber() != n) {
+        if(hb.get_bookingID() != n) {
             outFile.write(reinterpret_cast<char *> (&hb), sizeof(hotelBooking));
         }
     }
@@ -315,7 +315,7 @@ void hotel_deleteBooking() {
     outFile.close();
     remove("booking.dat");
     rename("temp.dat","booking.dat");
-    cout<<"\n\n\tRecord Deleted ..";
+    cout<<"\n\n\tRecord Deleted ..\n";
 }
 
 void hotel_displayAllBooking() {
@@ -450,7 +450,7 @@ void hotel_deleteCustomer() {
     outFile.close();
     remove("customer.dat");
     rename("temp.dat","customer.dat");
-    cout<<"\n\n\tRecord Deleted...";
+    cout<<"\n\n\tRecord Deleted...\n";
 }
 
 void hotel_displayAllCustomer() {
