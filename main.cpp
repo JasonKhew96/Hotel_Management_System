@@ -187,7 +187,7 @@ bool hotel_bookRoomNStatus(int n){
     }
     while (!File.eof() && found == false) {
         File.read(reinterpret_cast<char *> (&hr), sizeof(hotelRoom));
-        if ((hr.get_roomNumber() == n) && (hr.get_roomStatus() == 0)) {
+        if (hr.get_roomNumber() == n) {
             found = true;
         }
     }
@@ -329,7 +329,7 @@ void hotel_displayAllBooking() {
     }
     cout<<"\n\n\t\tBooking list\n\n";
     cout<<"=======================================================================================\n";
-    cout<< left << setw(15) << "Booking ID" << setw(15) << "Room Number" << setw(25) << "Customer Arrival" << "Customer Departure\n";
+    cout<< left << setw(15) << "Booking ID" << setw(15) << "Room Number" << setw(15) << "Customer ID" << setw(25) << "Customer Arrival" << "Customer Departure\n";
     cout<<"=======================================================================================\n";
     while(inFile.read(reinterpret_cast<char *> (&hb), sizeof(hotelBooking))) {
         hb.reportBooking();

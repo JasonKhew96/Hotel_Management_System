@@ -62,6 +62,7 @@ void hotelBooking::bookRoom() {
 void hotelBooking::showBooking() {
     cout << "Booking ID: " << bookingID << endl;
     cout << "Room Number: " << roomNumber << endl;
+    cout << "Customer ID: " << customerID << endl;
     cout << "Customer Arrival: " << customerArrival << endl;
     cout << "Customer Departure: " << customerDeparture << endl;
 }
@@ -69,7 +70,8 @@ void hotelBooking::showBooking() {
 void hotelBooking::reportBooking() {
     cout << left << setw(15)
          << bookingID << setw(15)
-         << roomNumber << setw(25)
+         << roomNumber << setw(15)
+         << customerID << setw(25)
          << customerArrival << setw(25)
          << customerDeparture << endl;
 }
@@ -78,6 +80,9 @@ void hotelBooking::modifyBooking() {
     char inputstr[21];
     cout << "Room number (" << roomNumber << "): ";
     cin >> roomNumber;
+    cin.ignore();
+    cout << "Customer ID (" << customerID << "): ";
+    cin >> customerID;
     cin.ignore();
     cout << "Customer Arrival (" << customerArrival << "): ";
     cin.getline(inputstr, sizeof(inputstr));
